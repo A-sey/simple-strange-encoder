@@ -1,0 +1,9 @@
+D:\Информатика 4 семестр\Лабораторная работа №7\Пащенко Алексей\SimpleCoder\SimpleCoder\bin\Debug\SimpleCoder.exe.config
+D:\Информатика 4 семестр\Лабораторная работа №7\Пащенко Алексей\SimpleCoder\SimpleCoder\bin\Debug\SimpleCoder.exe
+D:\Информатика 4 семестр\Лабораторная работа №7\Пащенко Алексей\SimpleCoder\SimpleCoder\bin\Debug\SimpleCoder.pdb
+D:\Информатика 4 семестр\Лабораторная работа №7\Пащенко Алексей\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.csprojResolveAssemblyReference.cache
+D:\Информатика 4 семестр\Лабораторная работа №7\Пащенко Алексей\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.Form1.resources
+D:\Информатика 4 семестр\Лабораторная работа №7\Пащенко Алексей\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.Properties.Resources.resources
+D:\Информатика 4 семестр\Лабораторная работа №7\Пащенко Алексей\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.csproj.GenerateResource.Cache
+D:\Информатика 4 семестр\Лабораторная работа №7\Пащенко Алексей\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.exe
+D:\Информатика 4 семестр\Лабораторная работа №7\Пащенко Алексей\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.pdb
