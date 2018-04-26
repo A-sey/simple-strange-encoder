@@ -30,9 +30,11 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.кодироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.декодироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.декодироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +55,13 @@
             this.кодироватьToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.кодироватьToolStripMenuItem.Text = "Кодировать";
             this.кодироватьToolStripMenuItem.Click += new System.EventHandler(this.кодироватьToolStripMenuItem_Click);
+            // 
+            // декодироватьToolStripMenuItem
+            // 
+            this.декодироватьToolStripMenuItem.Name = "декодироватьToolStripMenuItem";
+            this.декодироватьToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.декодироватьToolStripMenuItem.Text = "Декодировать";
+            this.декодироватьToolStripMenuItem.Click += new System.EventHandler(this.декодироватьToolStripMenuItem_Click);
             // 
             // textBox1
             // 
@@ -75,18 +84,31 @@
             this.textBox2.Size = new System.Drawing.Size(586, 88);
             this.textBox2.TabIndex = 2;
             // 
-            // декодироватьToolStripMenuItem
+            // textBox3
             // 
-            this.декодироватьToolStripMenuItem.Name = "декодироватьToolStripMenuItem";
-            this.декодироватьToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.декодироватьToolStripMenuItem.Text = "Декодировать";
-            this.декодироватьToolStripMenuItem.Click += new System.EventHandler(this.декодироватьToolStripMenuItem_Click);
+            this.textBox3.Location = new System.Drawing.Point(464, 4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(142, 20);
+            this.textBox3.TabIndex = 3;
+            this.textBox3.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(348, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Потеряны символы:";
+            this.label1.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 311);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip1);
@@ -107,6 +129,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ToolStripMenuItem декодироватьToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label1;
     }
 }
 
