@@ -7,3 +7,12 @@ D:\Информатика 4 семестр\Лабораторная работа
 D:\Информатика 4 семестр\Лабораторная работа №7\Пащенко Алексей\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.csproj.GenerateResource.Cache
 D:\Информатика 4 семестр\Лабораторная работа №7\Пащенко Алексей\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.exe
 D:\Информатика 4 семестр\Лабораторная работа №7\Пащенко Алексей\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.pdb
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\bin\Debug\SimpleCoder.exe.config
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.exe
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.pdb
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\bin\Debug\SimpleCoder.exe
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\bin\Debug\SimpleCoder.pdb
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.csprojResolveAssemblyReference.cache
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.Form1.resources
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.Properties.Resources.resources
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.csproj.GenerateResource.Cache
