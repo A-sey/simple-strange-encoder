@@ -1,0 +1,8 @@
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\bin\Release\SimpleCoder.exe.config
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Release\SimpleCoder.Form1.resources
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Release\SimpleCoder.Properties.Resources.resources
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Release\SimpleCoder.csproj.GenerateResource.Cache
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\bin\Release\SimpleCoder.exe
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\bin\Release\SimpleCoder.pdb
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Release\SimpleCoder.exe
+G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Release\SimpleCoder.pdb
