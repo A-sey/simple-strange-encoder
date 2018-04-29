@@ -73,7 +73,7 @@ namespace SimpleCoder
                 }
             }
             // Добавляем пробелы, чтобы число символов стало кратно четырём
-            while (temp.Length % 4 != 0)
+            while (temp.Length % 8 != 0)
                 temp += (char)(1);
             
             // Проверка на наличие потеряных символов
@@ -104,13 +104,16 @@ namespace SimpleCoder
         string compress(string temp)
         {
             string output = "";
-            // Выбираем символы пачками по 4 штуки
-            for (int i = 0; i < temp.Length; i += 4)
+            // Выбираем символы пачками по 8 штук
+            for (int i = 0; i < temp.Length; i += 8)
             {
-                // Кодируем каждые 4 символа в 3
-                output += (char)(temp[i] << 2 | temp[i + 1] >> 4);
-                output += (char)(temp[i + 1] << 4 | temp[i + 2] >> 2);
-                output += (char)(temp[i + 2] << 6 | temp[i + 3]);
+                // Кодируем каждые 8 символов в 3
+                output += (char)(temp[i] << 10 | temp[i + 1] << 4 | temp[i + 2] >> 2);
+                output += (char)(temp[i + 2] << 14 | temp[i + 3] << 8 | temp[i + 4] << 2 | temp[i + 5] >> 4);
+                output += (char)(temp[i + 5] << 12 | temp[i + 6] << 6 | temp[i + 7]);
+                //output += (char)(temp[i] << 2 | temp[i + 1] >> 4);
+                //output += (char)(temp[i + 1] << 4 | temp[i + 2] >> 2);
+                //output += (char)(temp[i + 2] << 6 | temp[i + 3]);
             }
             //Вывод байтов сжатого закодированного слова
             byte[] compressed_bytes = encoder.GetBytes(output);
@@ -144,13 +147,21 @@ namespace SimpleCoder
             if (input.Length % 3 != 0) { return "<*/165\u0001<&3303\u0001\u0001\u0001"; }
             // Это закодированное "input error"
             string temp = "";
-            // Превращаем каждые 3 символа обратно в 4
+            // Превращаем каждые 3 символа обратно в 8
             for (int i = 0; i < input.Length; i += 3)
             {
-                temp += (char)(input[i] >> 2);
-                temp += (char)(input[i] << 4 & 63 | input[i + 1] >> 4);
-                temp += (char)(input[i + 1] << 2 & 63 | input[i + 2] >> 6);
+                temp += (char)(input[i] >> 10);
+                temp += (char)(input[i] >> 4 & 63);
+                temp += (char)(input[i] << 2 & 63 | input[i+1] >> 14);
+                temp += (char)(input[i + 1] >> 8 & 63);
+                temp += (char)(input[i + 1] >> 2 & 63);
+                temp += (char)(input[i + 1] << 4 & 63 | input[i + 2] >> 12);
+                temp += (char)(input[i + 2] >> 6 & 63);
                 temp += (char)(input[i + 2] & 63);
+                //temp += (char)(input[i] >> 2);
+                //temp += (char)(input[i] << 4 & 63 | input[i + 1] >> 4);
+                //temp += (char)(input[i + 1] << 2 & 63 | input[i + 2] >> 6);
+                //temp += (char)(input[i + 2] & 63);
             }
             //Вывод байтов расжатого закодированного слова
             byte[] decompressed_bytes = encoder.GetBytes(temp);

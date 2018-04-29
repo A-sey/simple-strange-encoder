@@ -16,3 +16,12 @@ G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\De
 G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.Form1.resources
 G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.Properties.Resources.resources
 G:\Games\Sony\GitHub repos\simple-strange-encoder\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\bin\Debug\SimpleCoder.exe.config
+C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.exe
+C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.pdb
+C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\bin\Debug\SimpleCoder.exe
+C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\bin\Debug\SimpleCoder.pdb
+C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.Form1.resources
+C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.Properties.Resources.resources
+C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.csproj.GenerateResource.Cache
