@@ -24,14 +24,21 @@ namespace SimpleCoder
 
         private void кодироватьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Получаем текст
-            string input = textBox1.Text;
-            // Кодируем его, чтобы освободить два старших бита
-            string temp = coding(input);
-            // Сжимаем текст
-            string output = compress(temp);
-            // Выводим результат
-            textBox2.Text = output;
+            try
+            {
+                // Получаем текст
+                string input = textBox1.Text;
+                // Кодируем его, чтобы освободить два старших бита
+                string temp = coding(input);
+                // Сжимаем текст
+                string output = compress(temp);
+                // Выводим результат
+                textBox2.Text = output;
+            }
+            catch
+            {
+                textBox2.Text = "Произошла какая-то ошибка. Попробуйте закодировать другой текст.";
+            }
         }
 
         string coding(string input)
@@ -51,14 +58,16 @@ namespace SimpleCoder
             for (int i = 0; i < input.Length; i++)
             {
                 // Если поступивший символ является разрешённым:
-                if ((input[i]>=' '&&input[i]<='Z')|| (input[i] >= 'a' && input[i] <= 'z')|| (input[i] >= 'А' && input[i] <= 'п')|| (input[i] >= 'р' && input[i] <= 'я')) {
+                if ((input[i] >= ' ' && input[i] <= 'Z') || (input[i] >= 'a' && input[i] <= 'z') || (input[i] >= 'А' && input[i] <= 'п') || (input[i] >= 'р' && input[i] <= 'я'))
+                {
                     // Проверка на раскладку:
                     if (input[i] >= '8')
                     {
-                        if (mod == 0 && input[i] >= 'А') { mod = 1; temp += (char)(63); }
-                        if (mod == 1 && input[i] < 'А') { mod = 0; temp += (char)(63); }
+                        if (mod == 0 && input[i] >= 'А' && input[i] <= 'я') { mod = 1; temp += (char)(63); }
+                        if (mod == 1 && input[i] >= 'A' && input[i] <= 'Z') { mod = 0; temp += (char)(63); }
+                        if (mod == 1 && input[i] >= 'a' && input[i] <= 'z') { mod = 0; temp += (char)(63); }
                     }
-                    
+
                     // Непосредственно кодирование
                     if (input[i] >= ' ' && input[i] <= '@') { temp += (char)(input[i] - 31); }
                     else if (input[i] >= 'a' && input[i] <= 'z') { temp += (char)(input[i] - 63); }
@@ -70,12 +79,11 @@ namespace SimpleCoder
                 else //Добавляем в список пропущенных
                 {
                     missed += input[i];
+                    temp += (char)(61);
+                    temp += input[i];
                 }
             }
-            // Добавляем пробелы, чтобы число символов стало кратно четырём
-            while (temp.Length % 8 != 0)
-                temp += (char)(1);
-            
+
             // Проверка на наличие потеряных символов
             if (missed.Length > 0)
             {
@@ -104,17 +112,43 @@ namespace SimpleCoder
         string compress(string temp)
         {
             string output = "";
-            // Выбираем символы пачками по 8 штук
-            for (int i = 0; i < temp.Length; i += 8)
+            // Алгоритм пошагового сжатия
+            // Сдвиг
+            int move = 0;
+            // Создаём нулевой символ   
+            char tchar = '\0';
+            // Преобразуем каждый символ
+            for (int i = 0; i < temp.Length; i++)
             {
-                // Кодируем каждые 8 символов в 3
-                output += (char)(temp[i] << 10 | temp[i + 1] << 4 | temp[i + 2] >> 2);
-                output += (char)(temp[i + 2] << 14 | temp[i + 3] << 8 | temp[i + 4] << 2 | temp[i + 5] >> 4);
-                output += (char)(temp[i + 5] << 12 | temp[i + 6] << 6 | temp[i + 7]);
-                //output += (char)(temp[i] << 2 | temp[i + 1] >> 4);
-                //output += (char)(temp[i + 1] << 4 | temp[i + 2] >> 2);
-                //output += (char)(temp[i + 2] << 6 | temp[i + 3]);
+                // Увеличиваем сдвиг на длину новой буквы
+                move += 6;
+                // Если не вышли за пределы
+                if (move < 16)
+                {
+                    // то просто записываем
+                    tchar = (char)((temp[i]) << (16 - move) | tchar);
+                }
+                else
+                {
+                    // Иначе дробим и записываем в два символа
+                    move -= 16;
+                    tchar = (char)((temp[i]) >> (move) | tchar);
+                    output += tchar;
+                    tchar = (char)((temp[i]) << (16 - move));
+                }
+                // Вписываем необрабатываемые символы:
+                if (temp[i] == 61)
+                {
+                    // Переходим на следующий символ
+                    i++;
+                    // Записываем символ
+                    tchar = (char)((temp[i]) >> (move) | tchar);
+                    output += tchar;
+                    tchar = (char)((temp[i]) << (16 - move));
+                }
             }
+            // Если остался неполный символ, записываем и его
+            if (tchar != '\0') output += tchar;
             //Вывод байтов сжатого закодированного слова
             byte[] compressed_bytes = encoder.GetBytes(output);
             Console.Write("Compressed bytes: ");
@@ -134,34 +168,48 @@ namespace SimpleCoder
             // Получаем закодированный текст
             string input = textBox1.Text;
             // Разворачиваем каждые 3 символа в 4
-            string temp = decompress(input);     
+            string temp = decompress(input);
             // Декодируем текст       
-            string output=decoding(temp);            
+            string output = decoding(temp);
             // Возвращаем результат
             textBox2.Text = output;
         }
 
         string decompress(string input)
         {
-            // Проверка на корректность входных данных
-            if (input.Length % 3 != 0) { return "<*/165\u0001<&3303\u0001\u0001\u0001"; }
-            // Это закодированное "input error"
+            // Алгоритм пошаговой распаковки
             string temp = "";
-            // Превращаем каждые 3 символа обратно в 8
-            for (int i = 0; i < input.Length; i += 3)
+            // Добавляем в конец пустой символ, чтобы не уйти за пределы массива
+            input += '\0';
+            // Сдвиг
+            int move = 0;
+            // Обрабаываем каждый символ
+            int i = 0;
+            while (i < input.Length - 1)
             {
-                temp += (char)(input[i] >> 10);
-                temp += (char)(input[i] >> 4 & 63);
-                temp += (char)(input[i] << 2 & 63 | input[i+1] >> 14);
-                temp += (char)(input[i + 1] >> 8 & 63);
-                temp += (char)(input[i + 1] >> 2 & 63);
-                temp += (char)(input[i + 1] << 4 & 63 | input[i + 2] >> 12);
-                temp += (char)(input[i + 2] >> 6 & 63);
-                temp += (char)(input[i + 2] & 63);
-                //temp += (char)(input[i] >> 2);
-                //temp += (char)(input[i] << 4 & 63 | input[i + 1] >> 4);
-                //temp += (char)(input[i + 1] << 2 & 63 | input[i + 2] >> 6);
-                //temp += (char)(input[i + 2] & 63);
+                // Увеличиваем сдвиг
+                move += 6;
+                // Если не вышли за пределы символа
+                if (move < 16)
+                {
+                    // Вырезаем нужную нам букву
+                    temp += (char)((input[i] >> (16 - move)) & 63);
+                }
+                else
+                {
+                    // Если вышли, уменьшаем сдвиг
+                    move -= 16;
+                    // Вырезаем букву из двух других и скрепляем
+                    temp += (char)((input[i] << (move) & 63 | input[i + 1] >> (16 - move)));
+                    // Переходим к следующей букве
+                    i++;
+                }
+                // Проверяем на незашифрованные
+                if (temp[temp.Length - 1] == 61)
+                {
+                    temp += (char)((input[i] << (move) | input[i + 1] >> (16 - move)));
+                    i++;
+                }
             }
             //Вывод байтов расжатого закодированного слова
             byte[] decompressed_bytes = encoder.GetBytes(temp);
@@ -182,6 +230,7 @@ namespace SimpleCoder
             //Проверяем каждый символ
             for (int i = 0; i < temp.Length; i++)
             {
+                if (temp[i] == 61) { output += temp[i + 1]; i++; continue; }
                 if (temp[i] == 63) { mod = (mod + 1) % 2; }
                 // Если встретили символ, означающий заглавную букву
                 if (temp[i] == 62)
@@ -220,13 +269,13 @@ namespace SimpleCoder
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
 #if DEBUG
             //Создание консоли для отладки
             AllocConsole();
 #endif
         }
-//Если компилим в релиз конфигурации не привязывать консоль
+        //Если компилим в релиз конфигурации не привязывать консоль
 #if DEBUG
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]

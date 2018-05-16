@@ -14,3 +14,11 @@ C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\bin\
 C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\obj\Release\SimpleCoder.Form1.resources
 C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\obj\Release\SimpleCoder.Properties.Resources.resources
 C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\obj\Release\SimpleCoder.csproj.GenerateResource.Cache
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\bin\Release\SimpleCoder.exe.config
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\obj\Release\SimpleCoder.exe
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\obj\Release\SimpleCoder.pdb
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\bin\Release\SimpleCoder.exe
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\bin\Release\SimpleCoder.pdb
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\obj\Release\SimpleCoder.Form1.resources
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\obj\Release\SimpleCoder.Properties.Resources.resources
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\obj\Release\SimpleCoder.csproj.GenerateResource.Cache

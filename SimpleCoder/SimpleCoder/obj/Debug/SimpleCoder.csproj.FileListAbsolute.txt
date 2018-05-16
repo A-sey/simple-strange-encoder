@@ -25,3 +25,12 @@ C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\obj\
 C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.Form1.resources
 C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.Properties.Resources.resources
 C:\Users\user\Desktop\simple-strange-encoder-master\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.csproj.GenerateResource.Cache
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\bin\Debug\SimpleCoder.exe.config
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.exe
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.pdb
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\bin\Debug\SimpleCoder.exe
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\bin\Debug\SimpleCoder.pdb
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.csprojResolveAssemblyReference.cache
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.Form1.resources
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.Properties.Resources.resources
+D:\Информатика 4 семестр\SimpleCoder\SimpleCoder\obj\Debug\SimpleCoder.csproj.GenerateResource.Cache
